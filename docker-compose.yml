@@ -1,0 +1,18 @@
+services:
+  jump-game:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jump-game
+    ports:
+      - '3000:80'
+    restart: unless-stopped
+    networks:
+      - game-network
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+
+networks:
+  game-network:
+    driver: bridge

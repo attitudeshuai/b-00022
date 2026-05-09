@@ -1,0 +1,18 @@
+{
+  "physics": {
+    "enabled": true,
+    "gravity": {
+      "x": 0,
+      "y": -20,
+      "z": 0
+    },
+    "allowSleep": true,
+    "sleepThreshold": 0.1,
+    "autoSimulation": true,
+    "fixedTimeStep": 0.016666666666666666,
+    "maxSubSteps": 1,
+    "solver": {
+      "iterations": 10
+    }
+  }
+}

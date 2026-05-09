@@ -1,0 +1,17 @@
+{
+  "designResolution": {
+    "width": 1280,
+    "height": 720,
+    "fitHeight": true,
+    "fitWidth": true
+  },
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "exactFitScreen": false,
+  "renderMode": "0",
+  "frameRate": 60
+}

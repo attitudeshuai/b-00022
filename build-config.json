@@ -1,0 +1,30 @@
+{
+  "platform": "web-mobile",
+  "buildPath": "build/web-mobile",
+  "startScene": "db://assets/scenes/GameScene.scene",
+  "debug": false,
+  "sourceMaps": false,
+  "mainBundleCompressionType": "default",
+  "mainBundleIsRemote": false,
+  "optimizeHotUpdate": false,
+  "packages": {},
+  "name": "jump-game",
+  "title": "跳一跳游戏",
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "webOrientation": "landscape",
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "md5Cache": false,
+  "encryptJs": false,
+  "xxteaKey": "",
+  "zipCompressJs": true,
+  "autoCompile": true,
+  "useBuiltinServer": true
+}
