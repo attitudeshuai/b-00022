@@ -3,6 +3,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        APP_VERSION: ${APP_VERSION:-0.0.0-unknown}
+        BUILD_DATE: ${BUILD_DATE:-}
+        VCS_REF: ${VCS_REF:-}
+    image: jump-game:${APP_VERSION:-0.0.0-unknown}
     container_name: jump-game
     ports:
       - '3000:80'
