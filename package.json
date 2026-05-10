@@ -4,6 +4,10 @@
   "description": "跳一跳游戏 - Cocos Creator 3.8.8",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint \"assets/**/*.ts\"",
+    "lint:fix": "eslint \"assets/**/*.ts\" --fix",
+    "build": "./build.sh",
+    "build:docker": "./build.sh --docker",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -14,7 +18,11 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^18.0.0"
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.59.2",
+    "@typescript-eslint/parser": "^8.59.2",
+    "eslint": "^10.3.0"
   },
   "creator": {
     "version": "3.8.8"
