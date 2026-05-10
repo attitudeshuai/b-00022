@@ -10,10 +10,13 @@
 		"lib": ["ES2015", "ES2017", "DOM"],
 		"types": [],
 		"baseUrl": ".",
+		"typeRoots": ["./types", "./node_modules/@types"],
 		"paths": {
-			"db://*": ["./db/*"]
+			"db://*": ["./db/*"],
+			"cc": ["./types/cc.d.ts"]
 		},
 		"useDefineForClassFields": false
 	},
+	"include": ["assets/**/*.ts", "types/**/*.d.ts"],
 	"exclude": ["node_modules", "library", "local", "temp", "build", "native"]
 }

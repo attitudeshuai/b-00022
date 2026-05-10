@@ -184,7 +184,7 @@ export class PlayerController extends Component {
 		}
 	}
 
-	update(deltaTime: number) {
+	update(_deltaTime: number) {
 		if (!this.node) return
 		this.enforceUpright()
 		const nodePos = this.node.position
@@ -231,7 +231,7 @@ export class PlayerController extends Component {
 	/**
 	 * 触摸开始
 	 */
-	onTouchStart(event: EventTouch) {
+	onTouchStart(_event: EventTouch) {
 		if (!this.canJump || this.isJumping) return
 		if (!this.gameManagerScript || !this.gameManagerScript.isPlaying()) return
 
@@ -244,7 +244,7 @@ export class PlayerController extends Component {
 	/**
 	 * 触摸结束
 	 */
-	onTouchEnd(event: EventTouch) {
+	onTouchEnd(_event: EventTouch) {
 		if (!this.isPressing) return
 
 		this.isPressing = false
@@ -637,7 +637,9 @@ export class PlayerController extends Component {
 	}
 
 	private playIdleAnim() {
-		this.playClipFromAsset(this.idleClip, true) || this.playClip(this.idleClipName, true)
+		if (!this.playClipFromAsset(this.idleClip, true)) {
+			this.playClip(this.idleClipName, true)
+		}
 	}
 
 	private getAnimationComponent(): Animation | SkeletalAnimation | null {
