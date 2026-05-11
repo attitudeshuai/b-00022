@@ -1,0 +1,11 @@
+node_modules/
+build/
+library/
+local/
+temp/
+native/
+packages/
+profiles/
+settings/
+creator/
+*.d.ts
