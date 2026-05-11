@@ -118,9 +118,9 @@ export class GameManager extends Component {
      * 玩家成功落在平台上
      */
     onPlayerLanded(platformNode: Node) {
-        if (!this.isGameRunning) return;
+        if (!this.isGameRunning) {return;}
 
-        if (!this.rightPlatform || platformNode !== this.rightPlatform) return;
+        if (!this.rightPlatform || platformNode !== this.rightPlatform) {return;}
 
         this.score++;
         this.updateScore();
@@ -132,7 +132,7 @@ export class GameManager extends Component {
      * 游戏结束
      */
     gameOver() {
-        if (!this.isGameRunning) return;
+        if (!this.isGameRunning) {return;}
 
         this.isGameRunning = false;
 
@@ -181,7 +181,7 @@ export class GameManager extends Component {
     }
 
     private setupStartButton() {
-        if (!this.startButton) return;
+        if (!this.startButton) {return;}
         const button = this.startButton.getComponent(Button);
         if (!button) {
             console.warn('Start button node missing Button component');
@@ -193,7 +193,7 @@ export class GameManager extends Component {
     }
 
     private setStartButtonEnabled(enabled: boolean) {
-        if (!this.startButton) return;
+        if (!this.startButton) {return;}
         const button = this.startButtonComponent || this.startButton.getComponent(Button);
         if (button) {
             button.interactable = enabled;
@@ -207,12 +207,12 @@ export class GameManager extends Component {
     }
 
     private placeLeftPlatform() {
-        if (!this.leftPlatform) return;
+        if (!this.leftPlatform) {return;}
         this.leftPlatform.setPosition(this.leftPlatformPos);
     }
 
     private placeRightPlatform() {
-        if (!this.rightPlatform) return;
+        if (!this.rightPlatform) {return;}
         const basePos = this.leftPlatform ? this.leftPlatform.position : this.leftPlatformPos;
         const minX = basePos.x + Math.max(this.minOffsetX, 0);
         const maxX = this.rightEdgeX;
@@ -249,14 +249,14 @@ export class GameManager extends Component {
     }
 
     private resetPlayerToLeft() {
-        if (!this.player) return;
+        if (!this.player) {return;}
         const basePos = this.leftPlatform ? this.leftPlatform.position : this.leftPlatformPos;
         this.player.setPosition(basePos.x, basePos.y + this.playerOffsetY, basePos.z);
         this.resetPlayerState();
     }
 
     private resetPlayerState() {
-        if (!this.player) return;
+        if (!this.player) {return;}
         const controller = this.player.getComponent(PlayerController);
         if (controller) {
             controller.resetState();
@@ -264,9 +264,9 @@ export class GameManager extends Component {
     }
 
     private getPlatformHalfWidth(platform: Node | null): number {
-        if (!platform) return 0.5;
+        if (!platform) {return 0.5;}
         const collider = platform.getComponent(BoxCollider);
-        if (!collider) return Math.max(platform.scale.x, 1) * 0.5;
+        if (!collider) {return Math.max(platform.scale.x, 1) * 0.5;}
         return Math.max(collider.size.x * platform.scale.x, 0.1) * 0.5;
     }
 
@@ -274,7 +274,7 @@ export class GameManager extends Component {
      * 为平台设置随机颜色
      */
     private setRandomPlatformColor(platform: Node) {
-        if (!platform || this.platformColors.length === 0) return;
+        if (!platform || this.platformColors.length === 0) {return;}
 
         // 随机选择一个颜色
         const randomIndex = Math.floor(Math.random() * this.platformColors.length);
